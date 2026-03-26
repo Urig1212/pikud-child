@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="alert_red">#FFCC0000</color>
+    <color name="alert_red_bright">#FFFF0000</color>
+    <color name="alert_dark_red">#FF8B0000</color>
+    <color name="alert_text">#FFFFFFFF</color>
+    <color name="jerusalem_highlight">#FFFFFF00</color>
+    <color name="background_dark">#FF1A1A1A</color>
+</resources>

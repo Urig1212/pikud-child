@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/overlay_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="32dp"
+    android:paddingEnd="32dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="#CCCC0000">
+
+    <!-- Jerusalem special warning - hidden by default -->
+    <TextView
+        android:id="@+id/tv_jerusalem_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚠ ירושלים ⚠"
+        android:textColor="#B2F5EA"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginBottom="2dp" />
+
+    <!-- Alert title -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ירי רקטות ופגזים"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- Affected cities -->
+    <TextView
+        android:id="@+id/tv_cities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:layout_marginTop="2dp" />
+
+    <!-- Personal family message — shown only on Jerusalem alert -->
+    <TextView
+        android:id="@+id/tv_family_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="בקרוב אולי תהיה אזעקה, איילה גפן ודרור. אולי עוד מעט נלך לממד."
+        android:textColor="#FFFF00"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+        android:visibility="gone" />
+
+</LinearLayout>
