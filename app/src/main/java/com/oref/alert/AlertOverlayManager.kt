@@ -132,6 +132,13 @@ class AlertOverlayManager(private val context: Context) {
                 tvFamily.show("✅ הכל בסדר! ניתן לחזור לנורמלי 🌈", 22f, 0xFFCCFFCC.toInt())
             }
 
+            AlertType.DRILL -> {
+                // תרגיל — מאוד עדין, ילדים לא שמים לב
+                style(container, 0x55_444466.toInt(), 32, 6)
+                tvWarning.visibility = View.GONE
+                tvFamily.show("🎯 תרגיל בלבד — הכל בסדר", 13f, 0xFF9999BB.toInt())
+            }
+
             AlertType.OTHER -> {
                 style(container, colorEnterGen, 32, 20)
                 tvWarning.visibility = View.GONE

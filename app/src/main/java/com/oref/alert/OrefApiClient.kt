@@ -7,9 +7,10 @@ import okhttp3.Request
 import java.util.concurrent.TimeUnit
 
 enum class AlertType {
-    PRE_ALERT,       // cat 14 — הנחיה מקדימה
-    ENTER_SHELTER,   // cat 1-12 — כנס לממד
-    ALL_CLEAR,       // cat 13 — ניתן לצאת
+    PRE_ALERT,      // cat 4  — warning (אזהרה כללית / התרעה מקדימה)
+    ENTER_SHELTER,  // cat 1  — missilealert | cat 2 uav | cat 3 nonconventional | cat 9 cbrne | cat 10 terrorattack
+    ALL_CLEAR,      // cat 13 — update | cat 14 flash  (עדכון/ניתן לצאת)
+    DRILL,          // cat 15-28 — תרגילים (מוצגים בצורה עדינה, לא מפחידים)
     OTHER
 }
 
@@ -23,10 +24,12 @@ data class OrefAlert(
     val citiesText: String get() = data.joinToString(" | ")
 
     val alertType: AlertType get() = when (cat) {
-        "14"                                              -> AlertType.PRE_ALERT
-        "13"                                              -> AlertType.ALL_CLEAR
-        "1","2","3","4","6","7","8","9","10","11","12"    -> AlertType.ENTER_SHELTER
-        else                                              -> AlertType.OTHER
+        "4"                                  -> AlertType.PRE_ALERT
+        "1","2","3","6","7","8","9","10","11","12" -> AlertType.ENTER_SHELTER
+        "13","14"                            -> AlertType.ALL_CLEAR
+        "15","16","17","18","19","20",
+        "21","22","23","24","25","26","27","28" -> AlertType.DRILL
+        else                                 -> AlertType.OTHER
     }
 
     /** True if the configured home city is in this alert */
