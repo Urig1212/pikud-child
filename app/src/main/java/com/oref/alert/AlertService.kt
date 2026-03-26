@@ -46,6 +46,7 @@ class AlertService : Service() {
         super.onCreate()
         createNotificationChannel()
         startForeground(NOTIFICATION_ID, buildNotification("מפעיל... בודק התרעות"))
+        WatchdogReceiver.schedule(this)  // keep-alive watchdog every 60s
         startPolling()
     }
 

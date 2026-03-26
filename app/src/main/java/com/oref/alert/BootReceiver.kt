@@ -10,6 +10,7 @@ class BootReceiver : BroadcastReceiver() {
             intent.action == "android.intent.action.QUICKBOOT_POWERON"
         ) {
             AlertService.start(context)
+            WatchdogReceiver.schedule(context)
         }
     }
 }
